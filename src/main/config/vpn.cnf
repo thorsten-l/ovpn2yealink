@@ -1,0 +1,18 @@
+client
+setenv SERVER_Poll_TIMEOUT 4
+nobind
+proto udp
+remote <your openvpn server> 1194
+dev tun
+dev-type tun
+persist-tun
+persist-key
+cipher AES-256-CBC
+keysize 256
+tun-mtu 1500
+remote-cert-tls server
+ca ca.crt
+cert client.crt
+key client.key
+comp-lzo
+verb 3
